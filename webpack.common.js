@@ -11,7 +11,7 @@ module.exports = {
 			banner: `
 /*!
  * Lightbox for Bootstrap 5 v${process.env.npm_package_version} (https://trvswgnr.github.io/bs5-lightbox/)
- * Copyright ${new Date().getFullYear()} Travis Aaron Wagner (https://github.com/trvswgnr/)
+ * Copyright 2025 Travis Aaron Wagner (https://github.com/trvswgnr/)
  * Licensed under MIT (https://github.com/trvswgnr/bs5-lightbox/blob/main/LICENSE)
  */`
 		})

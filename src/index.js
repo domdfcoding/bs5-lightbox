@@ -56,9 +56,10 @@ class Lightbox {
 			return src;
 		}
 		if (!/\:\/\//.test(src)) {
-			src = window.location.origin + src;
+			var url = new URL(src, window.location.href);
+		} else {
+			var url = new URL(src);
 		}
-		const url = new URL(src);
 		if (el.dataset.footer || el.dataset.caption) {
 			url.searchParams.set('caption', el.dataset.footer || el.dataset.caption);
 		}
