@@ -18,6 +18,7 @@ class Lightbox {
 			target: '[data-toggle="lightbox"]',
 			gallery: '',
 			size: 'xl',
+			aspect: '16x9',
 			constrain: true
 		});
 		this.settings = Object.assign(Object.assign({}, this.settings), options);
@@ -33,6 +34,11 @@ class Lightbox {
 		// check for data-size attribute
 		if (el.dataset.size) {
 			this.settings.size = el.dataset.size;
+		}
+
+		// check for data-aspect attribute
+		if (el.dataset.aspect) {
+			this.settings.aspect = el.dataset.aspect;
 		}
 
 		this.src = this.getSrc(el);
@@ -154,7 +160,7 @@ class Lightbox {
 				return `
 				<div class="carousel-item ${!i ? 'active' : ''}" style="min-height: 100px">
 					${spinner}
-					<div class="ratio ratio-16x9" style="background-color: #000;">${inner}</div>
+					<div class="ratio ratio-${this.settings.aspect}" style="background-color: #000;">${inner}</div>
 					${caption}
 				</div>`;
 			})
